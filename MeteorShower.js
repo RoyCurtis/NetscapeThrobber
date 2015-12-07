@@ -33,7 +33,7 @@ function spawnNewMeteor()
     
     meteor.setTranslation([10, 10, 10]);
     meteor.motion = new goo.Vector3();
-    meteor.alive  = false;
+    meteor.skip   = true;
     
     meteor.addToWorld();
     meteors.push(meteor);
@@ -62,7 +62,7 @@ function respawnMeteor(meteor)
     meteor.motion.x = -motionMag;
     meteor.motion.y = -motionMag;
     
-    meteor.alive = true;
+    meteor.skip = false;
 }
 
 // ### Goo methods
@@ -97,7 +97,7 @@ var update = function (args, ctx)
     if (nextSpawn < 0)
     {
         for (var i = 0; i < MAX_METEORS; i++)
-            if (!meteors[i].alive)
+            if (meteors[i].skip)
             {
                 respawnMeteor(meteors[i]);
                 break;
@@ -109,14 +109,14 @@ var update = function (args, ctx)
     
     meteors.forEach(function(meteor)
     {
-        if (!meteor.alive) return;
+        if (meteor.skip) return;
 
         var pos = meteor
             .addTranslation(meteor.motion)
             .getTranslation();
         
         if (pos.x < -7 || pos.y < -4)
-            meteor.alive = false;
+            meteor.skip = true;
     });
 };
 
