@@ -1,3 +1,7 @@
+Sadly, it appears that Goo engine is gone. [Their website is no longer functional as of Oct 28 (or earlier)](https://twitter.com/daveranan/status/924467669855764480).
+
+----
+
 [This is a take on the throbber](https://c1.goote.ch/49a5167773ee46cb9e9f9ac5d5363fd9.scene/) found on old [Netscape browsers](https://en.wikipedia.org/wiki/Netscape_Navigator). [The original throbber can be found here](https://media.giphy.com/media/anjRJ4nv9WJzO/giphy.gif).
 
 This was also my first time using the [Goo Engine and Creator](https://create.goocreate.com).
